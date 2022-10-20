@@ -1,7 +1,7 @@
 const db = require('../lib/db');
 
 const followManga = (req, res) => {
-  db.query('INSERT INTO fave_mangas (user_id, manga_id) VALUES (?, ?)', [req.user_id, req.params.mangaId])
+  db.query('INSERT INTO fave_mangas (user_id, manga_id) VALUES (?, ?)', [req.user_id, req.body.mangaId])
     .then(() => res.send({ status: 'success', msg: `Following ${req.params.mangaId}` }))
     .catch(e => {
       console.error(e.message);

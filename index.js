@@ -31,9 +31,9 @@ app.get('/sign-out', (req, res) => res.clearCookie('token').redirect('https://jo
 
 app.post('/register', (req, res) => registerUser(req, res));
 app.post('/signin', (req, res) => signinUser(req, res));
-app.post('/follow/:mangaId', requireAuth, (req, res) => followManga(req, res));
+app.post('/follow', requireAuth, (req, res) => followManga(req, res));
 
-app.delete('/unfollow/:mangaId', requireAuth, (req, res) => unfollowManga(req, res));
+app.delete('/unfollow', requireAuth, (req, res) => unfollowManga(req, res));
 
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
