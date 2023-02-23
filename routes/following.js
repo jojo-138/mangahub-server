@@ -11,9 +11,7 @@ const isFollowing = async (req, res) => {
 	);
 	const userIsFollowing =
 		data['EXISTS(SELECT * FROM fave_mangas WHERE user_id = ? AND manga_id = ? and provider = ?)'];
-	return userIsFollowing
-		? res.send({ following: true })
-		: res.status(404).send({ following: false });
+	return userIsFollowing ? res.send({ following: true }) : res.send({ following: false });
 };
 
 module.exports = { isFollowing };

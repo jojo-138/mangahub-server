@@ -1,16 +1,40 @@
-# MangaHub Server
+# Mangahub Server
 
-The RESTful server for [MangaHub](https://github.com/jojo-138/mangahub).
+The Node.js back-end server for [Mangahub](https://github.com/jojo-138/mangahub).
 
-    Express.js
-      - To quickly and easily develop a Node.js RESTful server
-      - Easy to connect with database.
-      - Easy to define routes based on URLs and HTTP methods.
-      - Easy to set response headers.
+## Technologies :wrench:
 
-    MySQL2
-      - Basic and simpler than PostgreSQL
-      - Easy to use, high performance, flexible, reliable, and secure
-      - Straightforward data transactions
-      - Protection against XSS attacks with Prepared Statements
-      - Cached statements to save query preparation time and better performance
+- Express.js
+- MySQL
+- Bcrypt
+- JWT
+- Nodemon
+
+## Features :zap:
+
+- Authentication using JWT and cookies
+- Password hashing using Bcrypt
+
+## Deployment:
+
+- AWS RDS for MySQL database
+- Heroku for Node.js server
+
+## Database Design :floppy_disk:
+
+![Database Design](https://user-images.githubusercontent.com/101021415/220903062-6162895e-17cb-4de5-8430-1474a37a581e.PNG)
+
+## Dev:
+
+1. Clone this repo.
+2. Run `npm install`.
+3. Create your own database. Refer to [Database Design](#database-design-💾).
+4. Create a `.env` file with the following key-value pairs shown below to connect to your own database and create a secret key for JTW:
+   ```
+   - DB_HOST
+   - DB_USER
+   - DB_PASSWORD
+   - DB_NAME
+   - JWT_KEY
+   ```
+5. Run `npm start:dev` to start dev using nodemon.
